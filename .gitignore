@@ -1,0 +1,9 @@
+*.out
+*.pdf
+*.toc
+*.aux
+*.log
+*.snm
+*.nav
+.pdf-view-restore
+auto/*
