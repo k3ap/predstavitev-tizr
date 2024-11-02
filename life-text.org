@@ -1,0 +1,55 @@
+In 1982, Conway and other showed that Life can simulate the basic components
+of a digital computer, thus showing that the game is Turing complete.
+The most important components, a few of which we'll see later, are memory cells,
+wires transmitting information, and logic gates.
+Later on, in 2000, Rendell implemented a Turing machine in Life, and extended it
+to a universal TM in 2010.
+This is the construction we'll be taking a closer look at today.
+
+First, some basic building blocks.
+The first is the glider, a pattern that repeats itself after a number of
+generations, but offset by a few tiles.
+We can interpret a glider's presence as a 1-bit and its absence as a 0-bit,
+thus gaining the ability to transmit information between two places.
+We can also make new gliders continuously, with a so-called glider gun, one
+variation of which is shown on the right.
+When we wish to perform computation with gliders, we can collide them into
+pre-prepared structures.
+For example, with a particular construction, it is possible to ensure two
+colliding gliders will destroy each other, which forms an XOR gate.
+
+We can use special structures to deflect a glider, and multiple of those can
+make gliders travel in a circle, which makes a memory cell.
+When we wish to read the contents of this cell, an opening is made in the
+cell wall, where passing gliders are duplicated with the original still
+going in a circle, and the copy escaping from the cell.
+This operation is triggered by outside gliders hitting the pentadecathlon
+at the top right.
+
+Putting these memory cells in a grid allows us to encode the transition
+function.
+Here, rows are indexed by the current state of the TM, and columns by the
+current symbol.
+Each memory cell can store enough information to encode the next state, the
+symbol to write and the tape movement.
+When it is time to retrieve this information, the supporting structures
+at the left and bottom send gliders at the right positions to uniquely determine
+the desired memory cell.
+
+Finally, the tape is represented with two stacks, so that a tape movement is
+achieved with a push operation on one stack and a pop operation on the other.
+We also don't store the symbol at the read-write head, as we have no need to do
+this.
+
+To close, let's loot at the full structure.
+Pictured is the memory block encoding the transition function at the bottom left,
+and the two stacks going diagonally.
+The structures at the ends of those stacks (which are mostly out of frame, as
+they are quite large) are stack constructors, which ensure that we never run
+out of space.
+Also pictured but invisible is the program this machine is running, provided as
+a stream of gliders coming from the top right.
+Initially, this construction has over 700.000 alive cells, with the number only
+growing as the stacks expand.
+It takes more than 20.000 generations for a single iteration of the universal
+Turing machine, over a million for a single step of the simulated Turing machine.
