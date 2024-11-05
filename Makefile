@@ -1,4 +1,4 @@
 all:
-	pdflatex predstavitev.tex
-	pdflatex predstavitev.tex
-	pdflatex predstavitev.tex
+	pdflatex --shell-escape predstavitev.tex
+	pdflatex --shell-escape predstavitev.tex
+	pdflatex --shell-escape predstavitev.tex

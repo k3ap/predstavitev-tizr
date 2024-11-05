@@ -2,3 +2,6 @@ http://www.cs.unibo.it/~babaoglu/courses/cas00-01/papers/Cellular_Automata/Turin
 http://rendell-attic.org/gol/fullutm/index.htm
 Cellular Automata A Discrete Universe, Andrew Ilachinski, 2001
 A New Kind Of Science, Stephen Wolfram, 2001
+https://www.newscientist.com/article/dn22134-first-gliders-navigate-ever-changing-penrose-universe/
+https://en.wikipedia.org/wiki/Penrose_tiling
+

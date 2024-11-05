@@ -1,14 +1,16 @@
+\section{Introduction of cellular automata}
+
 \begin{frame}{Introduction and history }
  \begin{columns}
      \begin{column}{0.6\textwidth}
           \begin{block}{}
-	
+
     \begin{itemize}
-    \item 
+    \item
     \textbf{Computational model} introduced by John Von Neumann and Stanislaw Ulam in the 1940s
-    \item 
+    \item
     It consists of a \textbf{grid of cells}, each in one of a finite number of \textbf{states} that change in \textbf{discrete time} steps according to a \textbf{fixed rule} based on cell's \textbf{neighbourhood}
-        \item \textbf{Famous examples:}  Wolfram's elementary cellular automata (1980s), Conway's game of life (1970s)...
+        \item \textbf{Famous examples:}  Wolfram's elementary cellular automata (1980s), Conway's Game of Life (1970s)...
     \end{itemize}
   \end{block}
      \end{column}
@@ -65,35 +67,36 @@
 \begin{frame}{Notations and definition}
 	  \begin{itemize}
 	  \item \textbf{Discrete cellular state space} $\mathcal{L}$: $n$-dimensional lattice of cells of possibly different shapes (usually homogenous)
-	  \item \textbf{Local value space} $\Sigma$: Each cell is in exactly \textbf{one state} $$\sigma_{\vec{i}\in \mathcal{L}}(t) \in \Sigma\equiv \{0,1,2,\dots,k-1 \}$$ The number of possible states is  $k =|\Sigma|$. 
+	  \item \textbf{Local value space} $\Sigma$: Each cell is in exactly \textbf{one state} $$\sigma_{\vec{i}\in \mathcal{L}}(t) \in \Sigma\equiv \{0,1,2,\dots,k-1 \}$$ The number of possible states is  $k =|\Sigma|$.
    \item \textbf{Boundary conditions} (when the simulation is run on finite sets)
 	  \item \textbf{Dynamical rule} $\phi: \Sigma^n \to \Sigma$, where $n$ specifies the number of cells of the neighbourhood $\mathcal{N}\{\vec{i}\}$ about cell $\vec{i}$. Transition rule is written as
-        $$\sigma_{\vec{i}}(t+1) = \phi(\sigma_{\vec{j}}(t)\in \mathcal{N}\{\vec{i}\})$$ 
+        $$\sigma_{\vec{i}}(t+1) = \phi(\sigma_{\vec{j}}(t)\in \mathcal{N}\{\vec{i}\})$$
 	  \end{itemize}
-	
-	
+
+
 
 \end{frame}
 
 
 \begin{frame}{One-dimensional example}
- 
+
   \begin{columns}
 	\begin{column}{0.5\textwidth}
 	  \begin{itemize}
 	  \item One-dimensional lattice
 	  \item $\Sigma =\{0,1\}, k = 2$
 	  \item No boundary conditions
-        \item Neighbourhood of a cell having radius $r=1$ (to the left and right of cell) 
+        \item Neighbourhood of a cell having radius $r=1$ (to the left and right
+					of the cell)
         \item Dynamical rule represented with a diagram for $k^{2r+1} = 8$ neighbourhood states.
-        \item $k^{k^{2r+1}}=2^8= 256$ possible different rules 
+        \item $k^{k^{2r+1}}=2^8= 256$ possible different rules
 	  \end{itemize}
-   	  
+
 	\end{column}
 	\begin{column}{0.7\textwidth}
  \includegraphics[height=0.18\textheight]{slike/rules.jpeg}
         \centering
-        
+
         \includegraphics[height=0.6\textheight]{slike/PossibleRules.jpeg}
         \end{column}
     \end{columns}
